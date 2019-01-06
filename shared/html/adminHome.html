@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CMS</title>
+        <meta charset="utf-8">
+        <meta name="AmidnCMS" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../shared/css/stylesheet.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../../shared/js/Model.js"></script>
+        <script type="text/javascript" src="../../shared/js/RowBuilder.js"></script>
+        <script type="text/javascript" src="../../shared/js/TableBuilder.js"></script>
+        <script type="text/javascript" src="../../shared/js/Pager.js"></script>
+        <script type="text/javascript" src="../../shared/js/Search.js"></script>
+        <script type="text/javascript" src="../../shared/js/NavController.js"></script>
+        <script type="text/javascript" src="../../shared/js/script.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">AdminPanel</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="#" id="customers"> Customers </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#" id="admins"> Admins </a>
+                </li>
+            </ul>
+            <form class="form-inline" method="POST" action="../../private/logout.php">
+                <input class="form-control" type="submit" value="Logout" id="logout">
+            </form>
+        </nav>
+        <div class="container"> 
+            <div class="content">
+                <div class="input-group row">
+                    <form class="form-inline col" method="GET" action="add">
+                        <input class="form-control" type="submit" value="AddNewUser" id="addUser">
+                    </form>
+                </div>
+                <div class="input-group row">
+                    <div class="input-group mb-3 col-md-4" id="selectContainer">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="rowsCount">RowsPerPage</label>
+                        </div>
+                        <select class="custom-select" id="rowsCount">
+                            <option selected value="10">10</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                            <option value="70">70</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 col-md-8">
+                        <div class="float-right">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchInput">
+                                <select class="custom-select form-control mr-sm-2" id="searchBy">
+                                    <option selected value="name">Name</option>
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tableContainer row">
+                    <div class="col">
+                        <table class="table table-hover table-striped table-bordered" id="dataTable">
+                                <thead class="thead thead-dark">
+                                    <tr>
+                                        <th scope="col" id="idHead">
+                                            Id <span class="fa fa-sort-amount-asc"></span>
+                                        </th>
+                                        <th scope="col" id="nameHead">
+                                            Name <span class="fa fa-sort-amount-asc"></span>
+                                        </th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col" id="birthHead">
+                                            BirthDate <span class="fa fa-sort-amount-desc"></span>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="custom-select" id="statusSelect">
+                                                <option selected value="all">All</option>
+                                                <option value="1">Actived</option>
+                                                <option value="2">Deactivated</option>
+                                            </select>
+                                        </th>
+                                        
+                                        
+                                        <th scope="col" id="planCol">
+                                            <select class="custom-select" id="planSelect">
+                                                <option selected value="all">All</option>
+                                                <option value="1">Regular</option>
+                                                <option value="2">Silver</option>
+                                                <option value="3">Gold</option>
+                                            </select>
+                                        </th>
+    
+                                        
+
+                                        <th scope="col">View | Update</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="pagerContainer row">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+h1{
+    text-align: center;
+    margin: auto;
+    padding-top: 1.5em;
+    padding-bottom: 1.0em;
+}
+
+.tableContainer{
+    width: 100%;
+    max-width: 100%;
+    overflow: scroll;
+    margin: auto;
+}
+
+.content{
+    margin: auto;
+}
+
+#selectContainer{
+    width: 25%;
+    float: left;
+}
+
+.pagerContainer{
+    float: right;
+}
+
+.isDisabled a{
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+#nameHead:hover, #idHead:hover, #birthHead:hover{
+    background-color: green;
+}
+
+tbody tr:nth-child(odd) td:first-child {
+    background-color: #156;
+    color: oldlace;
+}
+
+/*this one is for editview per row*/
+tbody tr:nth-child(even) td{
+    width: 100%;
+}
+
+
+form[action="addUser.php"]{
+    margin: 1% 0 1% 0;
+} 
+
+
+.float-right{
+    width: 100%;
+}
+.float-right form{
+    float: right;
+}
+
+/*
+td{
+    max-width: 150px;
+    overflow: scroll;
+}*/

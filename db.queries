@@ -1,0 +1,51 @@
+use company;
+
+create table statuses(
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    status_name VARCHAR(50) NOT NULL
+);
+INSERT INTO statuses(status_name) values('Active');
+INSERT INTO statuses(status_name) values('Inactive');
+
+create table plans(
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    plan_name VARCHAR(100) NOT NULL
+);
+INSERT INTO plans(plan_name) values('Reqular');
+INSERT INTO plans(plan_name) values('Silver');
+INSERT INTO plans(plan_name) values('Gold');
+
+
+create table customers(
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone INT(11) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+
+    status INT(6) UNSIGNED DEFAULT 1,
+    plan   INT(6) UNSIGNED DEFAULT 1,
+    
+    FOREIGN KEY (status) REFERENCES statuses(id),
+    FOREIGN KEY (plan)   REFERENCES plans(id)
+);
+INSERT INTO customers (name, phone, email, password, birthdate) 
+values ('mahmoud', 1112087726, 'mahmoud@gmail.com', '123', CURDATE()),
+       ('ibrahim', 1125462556, 'ibrahim@gmail.com', '123', CURDATE());
+
+
+create table admins(
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone INT(11) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    birthdate DATE NOT NULL,
+
+    status INT(6) UNSIGNED DEFAULT 1,
+    FOREIGN KEY (status) REFERENCES statuses(id)
+);
+INSERT INTO admins (name, phone, email, password, birthdate) 
+values ('sorcerer', 1112087726, 'sorcerer@femto15.com', '123', CURDATE()),
+       ('admin2'  , 1125462556, 'admin2@femto15.com'  , '123', CURDATE());
