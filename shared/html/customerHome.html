@@ -40,7 +40,13 @@
                 <div class='form-group row'>
                     <label for='status' class='col-sm-2 col-form-label'>Status</label>
                     <div class='col-sm-10'>
-                        <input type='text' class='form-control' id='status' name="status" value=<?php echo $user->status == '1'?'Activated':'Deactivated' ?> disabled>
+                        <input type='text' class='form-control' id='status' name="status" value=<?php echo $user->status->status_name ?> disabled>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label for='plan' class='col-sm-2 col-form-label'>Plan</label>
+                    <div class='col-sm-10'>
+                        <input type='text' class='form-control' id='plan' name="plan" value=<?php echo $user->plan->plan_name ?> disabled>
                     </div>
                 </div>
             </form>            

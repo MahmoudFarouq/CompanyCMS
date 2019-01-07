@@ -26,7 +26,7 @@
             if(AuthGuard::userIsAdmin()){
                 header('location: ../admin');
             }else if(AuthGuard::userIsCustomer()){
-                if(AuthGuard::getCurrentUser()->status == '2'){
+                if(AuthGuard::getCurrentUser()->status->id == '2'){
                     AuthGuard::abortSession();
                     echo "
                         <h1> sorry your account is been deactivated </h1>
