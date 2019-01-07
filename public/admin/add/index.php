@@ -14,11 +14,9 @@
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
         require(SHARED_PATH.'/html/addUserForm.html');
     }else{
-
         $args = [
             'email'=>$_POST['email'], 
-            //password_hash($_POST['password'], PASSWORD_DEFAULT), 
-            'password'=>$_POST['password'],
+            'password'=>password_hash($_POST['password'], PASSWORD_DEFAULT), 
             'name'=>$_POST['name'], 
             'phone'=>$_POST['phone'], 
             'birthdate'=>$_POST['birthDate'], 

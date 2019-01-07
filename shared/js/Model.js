@@ -2,7 +2,7 @@
 class Model{
 
     constructor(){
-        this.URI = 'http://localhost/private/controller.php';
+        this.URI = 'http://localhost/CompanyCMS/private/controller.php';
     }
 
     async getRecords(

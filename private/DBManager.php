@@ -134,10 +134,7 @@
                 return null;
             }else{
                 $user = $users[0];
-                //if(password_verify($password, $user['password'])){
-                //    return $user;
-                //}
-                if($args['password'] == $user->password){
+                if(password_verify($args['password'], $user->password)){
                     return $user;
                 }
                 return null;
